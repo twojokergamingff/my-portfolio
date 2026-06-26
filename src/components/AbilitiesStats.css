@@ -1,0 +1,303 @@
+.abilities-stats {
+  padding: 6rem 2rem;
+  background: linear-gradient(180deg, rgba(26, 31, 58, 0.5), rgba(10, 14, 39, 0.5));
+  position: relative;
+}
+
+.abilities-stats::before {
+  content: '';
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(255, 170, 0, 0.05), transparent);
+  border-radius: 50%;
+  top: 10%;
+  left: 5%;
+}
+
+.abilities-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 3rem;
+  animation: slideInUp 0.6s ease-out;
+}
+
+.section-dot {
+  font-size: 2rem;
+  color: #ffaa00;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.section-title .highlight {
+  color: #ffaa00;
+}
+
+.total-level-card {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(255, 170, 0, 0.1);
+  border: 2px solid rgba(255, 170, 0, 0.3);
+  border-radius: 1rem;
+  padding: 1.5rem 2rem;
+  margin-bottom: 3rem;
+  animation: slideInUp 0.7s ease-out 0.1s both;
+}
+
+.total-level-card label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #ffaa00;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.total-level {
+  font-size: 3rem;
+  font-weight: 900;
+  color: #ffaa00;
+}
+
+.abilities-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.ability-card {
+  background: linear-gradient(135deg, rgba(0, 217, 255, 0.1), rgba(0, 153, 204, 0.05));
+  border: 2px solid rgba(0, 217, 255, 0.3);
+  border-radius: 1rem;
+  padding: 2rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  animation: slideInUp 0.6s ease-out both;
+  position: relative;
+  overflow: hidden;
+}
+
+.ability-card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, rgba(0, 217, 255, 0.1), transparent);
+  border-radius: 50%;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.ability-card:hover::before {
+  opacity: 1;
+}
+
+.ability-card:hover {
+  border-color: #00d9ff;
+  box-shadow: 0 10px 30px rgba(0, 217, 255, 0.2);
+  transform: translateY(-5px);
+}
+
+.ability-card.red {
+  --color: #ff4444;
+}
+
+.ability-card.orange {
+  --color: #ffaa00;
+}
+
+.ability-card.blue {
+  --color: #00aaff;
+}
+
+.ability-card.green {
+  --color: #00ff00;
+}
+
+.ability-card.expanded {
+  grid-column: 1 / -1;
+  max-width: 100%;
+}
+
+.ability-header {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+  align-items: flex-start;
+  position: relative;
+  z-index: 1;
+}
+
+.ability-icon {
+  font-size: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  background: rgba(0, 217, 255, 0.1);
+  border: 2px solid rgba(0, 217, 255, 0.3);
+  border-radius: 0.5rem;
+}
+
+.ability-title-section {
+  flex: 1;
+}
+
+.ability-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #00d9ff;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.proficiency-badge {
+  display: inline-block;
+  padding: 0.4rem 0.8rem;
+  border-radius: 0.25rem;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border: 1px solid;
+}
+
+.proficiency-badge.red {
+  background: rgba(255, 68, 68, 0.1);
+  border-color: #ff4444;
+  color: #ff4444;
+}
+
+.proficiency-badge.orange {
+  background: rgba(255, 170, 0, 0.1);
+  border-color: #ffaa00;
+  color: #ffaa00;
+}
+
+.proficiency-badge.blue {
+  background: rgba(0, 170, 255, 0.1);
+  border-color: #00aaff;
+  color: #00aaff;
+}
+
+.proficiency-badge.green {
+  background: rgba(0, 255, 0, 0.1);
+  border-color: #00ff00;
+  color: #00ff00;
+}
+
+.ability-expanded {
+  animation: slideInUp 0.3s ease-out;
+  margin-bottom: 1.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.ability-description {
+  color: #b0b0b0;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+.ability-progress {
+  position: relative;
+  z-index: 1;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 24px;
+  background: rgba(0, 0, 0, 0.5);
+  border: 2px solid rgba(0, 217, 255, 0.3);
+  border-radius: 0.35rem;
+  overflow: hidden;
+  margin-bottom: 0.75rem;
+}
+
+.progress-fill {
+  height: 100%;
+  border-radius: 0.25rem;
+  transition: width 1s ease-out;
+  position: relative;
+}
+
+.progress-fill::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  animation: shimmer 2s infinite;
+}
+
+.progress-fill.red {
+  background: linear-gradient(90deg, #ff4444, #ff6666);
+}
+
+.progress-fill.orange {
+  background: linear-gradient(90deg, #ffaa00, #ffcc00);
+}
+
+.progress-fill.blue {
+  background: linear-gradient(90deg, #00aaff, #00ddff);
+}
+
+.progress-fill.green {
+  background: linear-gradient(90deg, #00ff00, #00dd00);
+}
+
+.progress-info {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  color: #b0b0b0;
+}
+
+.level-info {
+  font-weight: 600;
+  color: #00d9ff;
+}
+
+.xp-info {
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .abilities-stats {
+    padding: 4rem 1rem;
+  }
+
+  .section-title {
+    font-size: 1.8rem;
+  }
+
+  .abilities-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ability-card.expanded {
+    grid-column: 1;
+  }
+}
