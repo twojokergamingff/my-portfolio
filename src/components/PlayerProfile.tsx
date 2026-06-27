@@ -2,7 +2,7 @@ import { useState } from 'react'
 import './PlayerProfile.css'
 
 const PlayerProfile = () => {
-  const [isOnline, setIsOnline] = useState(true)
+  const [isOnline] = useState(true)
 
   const stats = {
     level: 42,
